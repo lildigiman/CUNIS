@@ -17,6 +17,14 @@ Features:
 -Customize and create your own item types (motherboard, ram, psu, fans/heatsinks, adapters...)
 
 
+Database Breakdown:
+
+db.parts:
+  - db of all parts the user has
+
+db.fields:
+  - All the custom and built in fields for which to specify a part by
+
 Future Plans:
 
 - Statistics!

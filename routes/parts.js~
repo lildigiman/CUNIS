@@ -1,0 +1,13 @@
+
+/*
+ * GET users listing.
+ */
+
+exports.list = function(req, res){
+  partsProvider.findAll(function(error, parts){
+    res.render('parts', {
+      title: "All Parts",
+      parts: parts
+    });
+  });
+};
