@@ -1,0 +1,11 @@
+extends ../layout
+
+block content
+  h1= title
+  #fields
+    - each field in fields
+      div.field
+        div.created_at= field.created_at
+        div.title= field.title
+        div.name= field.name
+    a(href="/fields/new")!= "Add new field"

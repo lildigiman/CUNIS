@@ -1,0 +1,16 @@
+extends ../layout
+
+block content
+  h1= title
+  div.newPart
+    form
+      div
+        div
+          span.label Title :
+          input(type="text", name="title", id="editPartTitle")
+        div
+          span.label Name :
+          input(type="text", name="name", id="editPartName")
+        div#editPartSubmit
+          input(type="submit", value="Save")
+    a(href="/parts")!= "Back to parts List"

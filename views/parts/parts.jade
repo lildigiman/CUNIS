@@ -1,0 +1,11 @@
+extends ../layout
+
+block content
+  h1= title
+  #parts
+    - each part in parts
+      div.part
+        div.created_at= part.created_at
+        div.title= part.title
+        div.name= part.name
+    a(href="/parts/new")!= "Add new part"

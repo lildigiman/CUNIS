@@ -21,7 +21,7 @@ FieldsProvider.prototype.getCollection= function(callback) {
   });
 };
 
-//find all Parts
+//find all Fields
 FieldsProvider.prototype.findAll = function(callback) {
     this.getCollection(function(error, field_collection) {
       if(error){
@@ -40,7 +40,7 @@ FieldsProvider.prototype.findAll = function(callback) {
     });
 };
 
-//save new Parts
+//save new Fields
 FieldsProvider.prototype.save = function(fields, callback) {
     this.getCollection(function(error, field_collection) {
       if(error){

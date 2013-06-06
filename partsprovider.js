@@ -10,7 +10,7 @@ PartsProvider = function(host, port) {
 };
 
 
-PartsProvider.prototype.getCollection= function(callback) {
+PartsProvider.prototype.getCollection = function(callback) {
   this.db.collection('parts', function(error, part_collection) {
     if(error){
       callback(error);

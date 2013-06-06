@@ -14,7 +14,7 @@ Features:
 
 - Select an array of items to make up a "Computer"
 - History of every update made to each item in inventory
--Customize and create your own item types (motherboard, ram, psu, fans/heatsinks, adapters...)
+- Customize and create your own item types (motherboard, ram, psu, fans/heatsinks, adapters...)
 
 
 Database Breakdown:

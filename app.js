@@ -6,15 +6,11 @@
 var express = require('express')
   , routes = require('./routes')
   , parts = require('./routes/parts')
+  , fields = require('./routes/fields')
   , http = require('http')
-  , path = require('path')
-  , PartsProvider = require('./partsprovider').PartsProvider
-  , FieldsProvider = require('./fieldsprovider').FieldsProvider;
+  , path = require('path');
 
 var app = express();
-
-var partsProvider = new PartsProvider('localhost', 27017)
-  , fieldsProvider = new FieldsProvider('localhost', 27017);
 
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
@@ -34,9 +30,12 @@ app.configure('development', function(){
 
 app.get('/', routes.index);
 app.get('/parts', parts.list);
+app.get('/fields', fields.list);
 app.get('/parts/new', parts.new);
+app.get('/fields/new', fields.new);
 
 app.post('/parts/new', parts.newPost);
+app.post('/fields/new', fields.newPost);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));

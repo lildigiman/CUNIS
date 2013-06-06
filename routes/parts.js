@@ -8,7 +8,7 @@ var PartsProvider = require('../partsprovider').PartsProvider
  */
 exports.list = function(req, res){
   partsProvider.findAll(function(error, parts){
-    res.render('parts', {
+    res.render('parts/parts', {
       title: "All Parts",
       parts: parts
     });
@@ -16,7 +16,7 @@ exports.list = function(req, res){
 };
 
 exports.new = function(req, res){
-  res.render('new', {
+  res.render('parts/new', {
     title: "New part"
   });
 };
@@ -25,10 +25,10 @@ exports.new = function(req, res){
  * POST new part
  */
 exports.newPost = function(req, res){
-  partsProvider.save({
-    title: req.param('title'),
-    name: req.param('name'),
-  }, function (error, docs){
-    //res.redirect('/parts');
-  });
+  partsProvider.save(
+    req.param('data'),
+    function (error, docs){
+      res.redirect('/parts');
+    }
+  );
 };
